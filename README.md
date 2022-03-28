@@ -1,4 +1,6 @@
-# 布魯斯前端 React仿Instagram教學 初始專案
+# React Instagram Clon
+
+## React, Typescript, Redux Toolkit(Slice, RTK Query), Styled Component, Tailwind, 
 
 ## 如何使用此專案？
 
@@ -43,8 +45,8 @@ file: db.json
   "posts": [
     {
       "id": 1,
-      "location": "布魯斯前端",
-      "account": "bruce_1234",
+      "location": "台北市",
+      "account": "rickyang2910",
       "avatar": "/images/avatars/a1.png",
       "photo": "/images/posts/main1.png",
       "likes": 999,
@@ -100,7 +102,7 @@ file: db.json
   "stories": [
     {
       "id": 1,
-      "name": "bruce_fe",
+      "name": "rickyang2910",
       "avatar": "/images/avatars/a1.png"
     },
     {
@@ -145,7 +147,7 @@ file: db.json
     },
     {
       "id": 10,
-      "name": "bruce_fe",
+      "name": "rickyang2910",
       "avatar": "/images/avatars/a10.png"
     }
   ]
