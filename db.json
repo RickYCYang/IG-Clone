@@ -2,8 +2,8 @@
   "posts": [
     {
       "id": 1,
-      "location": "布魯斯前端",
-      "account": "bruce_1234",
+      "location": "New Taipei City",
+      "account": "rickyang2910",
       "avatar": "/images/avatars/a1.png",
       "photo": "/images/posts/main1.png",
       "likes": 999,
@@ -59,7 +59,7 @@
   "stories": [
     {
       "id": 1,
-      "name": "bruce_fe",
+      "name": "rickyang2910",
       "avatar": "/images/avatars/a1.png"
     },
     {
@@ -104,7 +104,7 @@
     },
     {
       "id": 10,
-      "name": "bruce_fe",
+      "name": "Aris",
       "avatar": "/images/avatars/a10.png"
     }
   ]
