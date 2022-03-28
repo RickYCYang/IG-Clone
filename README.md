@@ -1,4 +1,4 @@
-# React Instagram Clon
+# React Instagram Clone
 
 ## React, Typescript, Redux Toolkit(Slice, RTK Query), Styled Component, Tailwind, 
 
