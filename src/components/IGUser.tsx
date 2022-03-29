@@ -1,6 +1,8 @@
 import React, { memo } from "react";
 import styled, { css } from "styled-components";
 import tw from "twin.macro";
+import { useAppDispatch } from "hooks";
+import { follow, unFollow } from "slices/friendSlice";
 
 type TSize = "medium" | "small";
 
@@ -91,6 +93,17 @@ const IGUser: React.FC<IGUserProps> = memo(
     avatar,
     id,
   }) => {
+    const dispatch = useAppDispatch();
+
+    const followClickHandler = () => {
+      if (id === undefined) return;
+      if (isFollowing) {
+        dispatch(unFollow(id));
+      } else {
+        dispatch(follow(id));
+      }
+    };
+
     return (
       <IGUserContainer>
         <Avatar
@@ -106,9 +119,11 @@ const IGUser: React.FC<IGUserProps> = memo(
         </AccountLocationContainer>
         {showFollow &&
           (isFollowing ? (
-            <FollowingButton>FOLLOWING</FollowingButton>
+            <FollowingButton onClick={followClickHandler}>
+              FOLLOWING
+            </FollowingButton>
           ) : (
-            <FollowButton>FOLLOW</FollowButton>
+            <FollowButton onClick={followClickHandler}>FOLLOW</FollowButton>
           ))}
       </IGUserContainer>
     );

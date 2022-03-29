@@ -4,6 +4,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 export interface IGPostProps {
+  id: number;
   account: string;
   location: string;
   avatar: string;

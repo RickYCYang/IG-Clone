@@ -1,41 +1,7 @@
 import styled from "styled-components";
 import tw from "twin.macro";
 import IGUser from "components/IGUser";
-
-const friends = [
-  {
-    id: 1,
-    location: "Singapore",
-    account: "max_999",
-    showFollow: true,
-    isFollowing: true,
-    avatar: "/images/avatars/a1.png",
-  },
-  {
-    id: 2,
-    location: "Singapore",
-    account: "fm_999",
-    showFollow: true,
-    isFollowing: true,
-    avatar: "/images/avatars/a2.png",
-  },
-  {
-    id: 3,
-    location: "Singapore",
-    account: "joanne_999",
-    showFollow: true,
-    isFollowing: true,
-    avatar: "/images/avatars/a3.png",
-  },
-  {
-    id: 4,
-    location: "Singapore",
-    account: "focus_999",
-    showFollow: true,
-    isFollowing: true,
-    avatar: "/images/avatars/a4.png",
-  },
-];
+import { useAppSelector } from "hooks";
 
 const IGProfileContainer = styled.div`
   ${tw`
@@ -65,6 +31,9 @@ const IGUserContainer = styled.div`
 `;
 
 const IGProfile: React.FC = () => {
+  const friendReducer = useAppSelector((state) => state.friendReducer);
+  const friends = friendReducer.friends.slice(0, 9);
+
   return (
     <IGProfileContainer>
       <IGUser
@@ -76,7 +45,7 @@ const IGProfile: React.FC = () => {
       <FollowingTitle>You are following</FollowingTitle>
       {friends.map((friend) => (
         <IGUserContainer key={friend.id}>
-          <IGUser {...friend} />
+          <IGUser {...friend} showFollow />
         </IGUserContainer>
       ))}
     </IGProfileContainer>

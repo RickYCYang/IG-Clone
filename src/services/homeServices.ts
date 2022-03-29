@@ -22,14 +22,14 @@ export const homeApi = createApi({
   reducerPath: "homeApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3004/" }),
   endpoints: (builder) => ({
-    // getIGPosts: builder.query<IIGPost[], number | "all">({
-    //   query: (id) => {
-    //     if (id !== "all") {
-    //       return `posts/${id}`;
-    //     }
-    //     return "posts";
-    //   },
-    // }),
+    getIGPosts: builder.query<IIGPost[], number | "all">({
+      query: (id) => {
+        if (id !== "all") {
+          return `posts/${id}`;
+        }
+        return "posts";
+      },
+    }),
     getIGStories: builder.query<IIGStory[], number | "all">({
       query: (id) => {
         if (id !== "all") {
@@ -41,4 +41,4 @@ export const homeApi = createApi({
   }),
 });
 
-export const { useGetIGStoriesQuery } = homeApi;
+export const { useGetIGStoriesQuery, useGetIGPostsQuery } = homeApi;
